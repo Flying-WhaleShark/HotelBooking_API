@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*") // 本来はUIのURLを指定するのがベストですが、まずは接続確認のため "*" で全て許可します
 @RestController
 @RequestMapping("/api/bookings")
 public class BookingController {
