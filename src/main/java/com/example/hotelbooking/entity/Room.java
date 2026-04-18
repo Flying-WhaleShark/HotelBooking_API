@@ -13,8 +13,11 @@ public class Room {
     @Column(nullable = false)
     private String name;
 
-    @Column(length = 500)
+    @Column(length = 1000) // 長文が入るように
     private String description;
+
+    @Column // トップページ用の短い文
+    private String summary;
 
     @Column(nullable = false)
     private Double price;
@@ -65,6 +68,14 @@ public class Room {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getSummary() {
+        return summary;
+    }
+
+    public void setSummary(String summary) {
+        this.summary = summary;
     }
 
     public Double getPrice() {
