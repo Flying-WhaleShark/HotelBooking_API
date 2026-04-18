@@ -19,11 +19,12 @@ public class Room {
     @Column(nullable = false)
     private Double price;
 
-    @Column(length = 1000)
+    // ここを (name = "image_url") に修正しました
+    @Column(name = "image_url", length = 1000)
     private String imageUrl;
 
-    // --- ここに追加しました（1/3） ---
-    @Column(length = 1000)
+    // ここを (name = "large_image_url") に修正しました
+    @Column(name = "large_image_url", length = 1000)
     private String largeImageUrl;
 
     @Column(nullable = false)
@@ -32,7 +33,6 @@ public class Room {
     public Room() {
     }
 
-    // コンストラクタ（largeImageUrl も受け取れるように更新しました 2/3）
     public Room(String name, String description, Double price, String imageUrl, String largeImageUrl, Integer capacity) {
         this.name = name;
         this.description = description;
@@ -43,60 +43,18 @@ public class Room {
     }
 
     // Getters and Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public Double getPrice() {
-        return price;
-    }
-
-    public void setPrice(Double price) {
-        this.price = price;
-    }
-
-    public String getImageUrl() {
-        return imageUrl;
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    // --- ここに Getter/Setter を追加しました（3/3） ---
-    public String getLargeImageUrl() {
-        return largeImageUrl;
-    }
-
-    public void setLargeImageUrl(String largeImageUrl) {
-        this.largeImageUrl = largeImageUrl;
-    }
-
-    public Integer getCapacity() {
-        return capacity;
-    }
-
-    public void setCapacity(Integer capacity) {
-        this.capacity = capacity;
-    }
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
+    public String getName() { return name; }
+    public void setName(String name) { this.name = name; }
+    public String getDescription() { return description; }
+    public void setDescription(String description) { this.description = description; }
+    public Double getPrice() { return price; }
+    public void setPrice(Double price) { this.price = price; }
+    public String getImageUrl() { return imageUrl; }
+    public void setImageUrl(String imageUrl) { this.imageUrl = imageUrl; }
+    public String getLargeImageUrl() { return largeImageUrl; }
+    public void setLargeImageUrl(String largeImageUrl) { this.largeImageUrl = largeImageUrl; }
+    public Integer getCapacity() { return capacity; }
+    public void setCapacity(Integer capacity) { this.capacity = capacity; }
 }
