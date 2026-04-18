@@ -8,7 +8,10 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@CrossOrigin(origins = "*") // 本来はUIのURLを指定するのがベストですが、まずは接続確認のため "*" で全て許可します
+@CrossOrigin(origins = {
+    "http://localhost:5173", 
+    "https://hotelbooking-ui-ds7l.onrender.com"
+}, allowCredentials = "true")
 @RestController
 @RequestMapping("/api/bookings")
 public class BookingController {
