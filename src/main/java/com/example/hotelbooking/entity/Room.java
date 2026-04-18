@@ -22,11 +22,12 @@ public class Room {
     @Column(nullable = false)
     private Double price;
 
-    @Column(length = 1000)
+    // ここを (name = "image_url") に修正しました
+    @Column(name = "image_url", length = 1000)
     private String imageUrl;
 
-    // --- ここに追加しました（1/3） ---
-    @Column(length = 1000)
+    // ここを (name = "large_image_url") に修正しました
+    @Column(name = "large_image_url", length = 1000)
     private String largeImageUrl;
 
     @Column(nullable = false)
@@ -35,7 +36,6 @@ public class Room {
     public Room() {
     }
 
-    // コンストラクタ（largeImageUrl も受け取れるように更新しました 2/3）
     public Room(String name, String description, Double price, String imageUrl, String largeImageUrl, Integer capacity) {
         this.name = name;
         this.description = description;
@@ -46,6 +46,7 @@ public class Room {
     }
 
     // Getters and Setters
+
     public Long getId() {
         return id;
     }
